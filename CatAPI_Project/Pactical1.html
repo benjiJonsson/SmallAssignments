@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Main.css">
+    <title>CS5003 CW 1</title>
+</head>
+<h1> Cat Breed Guessing Game</h1>
+<h2> CS5003: Practical 1</h2>
+<body>
+    <div id="div1" class="bold">
+        <h3 id="victoryMessage"></h3>
+        <p id="questionsGuess"></p>
+        <p id="highScore"></p>
+    </div>
+    <div id="div2">
+    </div>
+    <div id="div3" class="clear-float">
+        Is your cat
+        <select id="tempSelect">
+            <option value=''>Select Temperament</option>
+        </select> ?
+        Your cat is <select id="guessSelect"> 
+            <option value=''>Select Breed</option>
+        </select>
+        <button id="guessButton">Guess</button>
+        <button id="hintButton">Hint</button>
+        <button id="quitGame">Quit Game</button>
+    </div>
+    <div id="div4">
+        <select id="numberCats"></select>
+        <button id="startGame">New Game</button>
+    </div>
+    <div id="div5">
+        <p class="bold"> Breeds Best Sore </p>
+        <p id="score5"> 5: No Score</p>
+        <p id="score10"> 10: No Score</p>
+        <p id="score15"> 15: No Score</p>
+        <p id="score20"> 20: No Score</p>
+    </div>
+        <script src="Main.js"></script>
+</body>
+</html>

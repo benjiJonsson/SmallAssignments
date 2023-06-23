@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Top 500 Songs</title>
+</head>
+<body>
+  <h1>Rolling Stone's Top 500 Songs of All Time</h1>
+  <div>
+    <!-- Selecting Years -->
+    <label for="selectYearStart">Please select a start year: </label>
+    <select id="selectYearStart">
+    <option id="option1">year</option>
+    </select>
+    <label for="selectYearEnd">Please select an end year: </label>
+    <select id="selectYearEnd">
+    <option id="option2">year</option>
+    </select>
+    <button id="selectYearStart" id="selectYearEnd" onclick="allYears()">Search Years</button>
+      <!-- Selecting Artist -->
+    <label for="selectArtist">Artist: </label>
+    <input type="text" id="selectArtist" onkeyup="slelectArtist()" placeholder="Search for artist.." title="Type in a name" name="selectArtist"></input>
+      <!-- Selecting Title -->
+    <label for="selectTitle">Title: </label>
+    <input type="text" id="selectTitle" name="selectTitle" onkeyup="selectTitle()" placeholder="Search for title..">
+  </div>
+ </body>
+   <div class="pagenum" id="pagination"></div>
+  <table>
+    <tr>
+        <th WIDTH="11%">Rank</th>
+        <th WIDTH="26%">Title</th>
+        <th WIDTH="26%">Artist</th>
+        <th WIDTH="26%">Album</th>
+        <th WIDTH="11%">Year</th>
+    </tr>
+    <tbody id="songTable">
+    </tbody>
+  </table>
+  <script src="json.js"></script>
+  <script src="songs.js"></script>
+
+  <style>
+    /* The styling of my table  */
+    * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+h1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+}
+
+div{
+    padding: 8px;
+    text-align: left;
+	height: 60px;
+}
+/* The CSS style for my tables is all from https://www.w3schools.com/html/html_tables.asp 
+with only minor changes. 
+*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+tr {
+    height: 40px;
+}
+th {
+    background-color: plum;
+    color: white;
+}
+
+select, button, input {
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    padding: 7px 15px;
+    transition: background-color .3s;
+}
+
+div {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+/* All my pagination page buttons are styled from https://www.w3schools.com/css/css3_pagination.asp
+with only minor changes 
+*/
+.pagenum {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  }
+  
+.pagenum button {
+    color: black;
+    float: left;
+    padding: 6px 17px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+  }
+  
+.pagenum button.active {
+    background-color: plum;
+    color: white;
+    border: 1px solid plum;
+  }
+  
+.pagenum button:hover:not(.active) {background-color: #ddd;}
+  </style>
+
+</html>
